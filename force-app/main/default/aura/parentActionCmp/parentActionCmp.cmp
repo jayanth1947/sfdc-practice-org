@@ -1,0 +1,27 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId"
+access="global">
+    <aura:attribute name="valueForChild" type="Boolean" />
+
+    <lightning:card class="slds-p-around_medium" title="Parent Action Cmp">
+        <p>
+            Parent Component
+        </p>
+    
+        <br/>
+    
+        <h1>Value from Child Component: {!v.valueForChild}</h1>
+    
+        <br/>
+        <!-- Child cmp -->
+        <c:childActionCmp aura:id="msg" parentAction="{!c.parentActionController}"/>
+    
+        <br/>
+    
+        <hr/>
+    
+        <p>Parent ENDS Here</p>
+    </lightning:card>
+
+    
+
+</aura:component>

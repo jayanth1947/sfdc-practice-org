@@ -1,0 +1,53 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId"
+access="global" > 
+
+    <!-- Attribute are the containers to store the values
+    Default is the value that is Optional
+
+    - This is the expression when we need to access attribute
+    'v' is refers that is from the client side attribute value
+    when we want to access the method in the expression we
+    use {!c.MethodName} 
+
+    -  'init' means intialization, 
+        'this' means current component
+        'action' will be the controller file -->
+
+    <!-- <aura:attribute name="newMessage" type="String" default="optionalDefault" /> -->
+
+    <aura:attribute name="newMessage" type="String" />
+    <h2 style="size: 100px; color: palegreen;">{!v.newMessage}</h2>
+    <aura:handler name="init" value="{!this}" action="{!c.myAction}" />
+
+    <!-- This is the way we will represent the sObjects -->
+    <aura:attribute name="accName" 
+                    type="Account" 
+                    default="{'sobjectType':'Account','Name':'Aura Test -1'}" /> 
+    <h2 style="size: 200px; color: rgb(121, 9, 9);">{!v.accName.Name}</h2>
+
+    
+    <!-- This is the way we reperent the arrays -->
+    <aura:attribute name="arrName" type="String[]" default="['jayanth','suman','kiran']" />
+
+    <h1>{!v.arrName[0]}</h1>
+    <h1>{!v.arrName[1]}</h1>
+    
+    <!-- Lists -->
+    <aura:attribute name="listName" type="List" default="['CTS','Wipro','Infosys']" />
+
+    <h2>{!v.listName[0]}</h2>
+
+    <!-- Sets -->
+    <aura:attribute name="setName" type="Set" default="['Lilly','Rose','Jasmine']" />
+
+    <h2>{!v.setName[0]}</h2>
+
+    <!-- Map -->
+    <aura:attribute name="mapName" type="Map" default="{a:'map1',b:'map2',c:'map3'}" />
+
+    <h2>{!v.mapName.c}</h2>
+
+    <aura:attribute name="jsObject" type="Object"  />
+
+    <h2>{!v.jsObject.name} - {!v.jsObject.mail}</h2>
+</aura:component>

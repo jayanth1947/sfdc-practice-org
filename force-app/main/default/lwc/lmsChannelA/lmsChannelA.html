@@ -1,0 +1,14 @@
+<template>
+    <div class="slds-m-around_large">
+        <lightning-card  variant="Narrow"  title="LWC to LWC" icon-name="standard:account">
+            <div class="slds-m-around_large">
+                <lightning-input type="text" variant="standard" name="name" label="Enter the message" onkeyup={inputHandler}></lightning-input>
+            </div>
+            <div class="slds-m-around_large">
+                <lightning-button variant="brand" label="CLick Here" title="titleName" onclick={publishMessage}></lightning-button>
+            </div>
+        
+        </lightning-card>
+    </div>
+   
+</template>

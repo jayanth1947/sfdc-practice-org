@@ -1,0 +1,40 @@
+<template>
+    <!-- Example for primitive data -->
+    <c-p2c-alertcomponent message="Hey There Here is the data"
+    card-heading="Alert Component"
+    number="25"
+    is-valid="True">
+    </c-p2c-alertcomponent>
+
+    <!-- Example for Non-Primitive Data -->
+    <div class="slds-m-around_medium"></div>
+    <c-p2c-carousal-component
+    carousal-details={carousalData}></c-p2c-carousal-component>
+
+    <!-- Example for Action -->
+    <lightning-card title="Example for Action">
+        <div class="slds-m-around_medium">
+            <lightning-input type="number" label="Enter Percentage" onkeyup={changeHandler}
+            value={percentageValue}></lightning-input>
+            <c-progress-component class="slds-m-around_large"
+            progress-value={percentageValue}></c-progress-component>
+
+        </div>
+    </lightning-card>
+        <!-- Example for child to Parent -->
+        <lightning-card title="Example for Child to Parent" class="slds-m-around_large">
+        <div class="slds-m-around_medium">
+        <lightning-button variant="brand" 
+        label="Reset Slider" 
+        title="Reset Slider" 
+        onclick={handleClick} 
+        class="slds-m-left_x-small"></lightning-button>
+        <c-p2c-slider-component
+        ></c-p2c-slider-component>
+            </div>
+    </lightning-card>
+    
+
+
+
+</template>

@@ -1,0 +1,13 @@
+p{
+    color: plum;
+    border: 2px solid orange;
+}
+.user{
+    color: palegreen;
+    font-size: 20px;
+
+}
+.user:hover{
+    font-size: 50px;
+    border: 1px solid peachpuff;
+}

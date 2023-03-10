@@ -1,0 +1,15 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId"
+access="global">
+    <aura:attribute name="parentAttri" type="String" default="Parent Attribute" />
+
+    <aura:handler name="init" value="{!this}" action="{!c.myAction}" />
+
+    <lightning:card  title="Parent Component">
+        <!-- This is where we can call the child from the parent component
+     # represents the unbounding expression -->
+        <strong><c:auraChildCompo child="{#v.parentAttri}"/></strong>
+        <strong class="slds-m-around_medium">{!v.parentAttri}</strong>
+    </lightning:card>
+
+    
+</aura:component>

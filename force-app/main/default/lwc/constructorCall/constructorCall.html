@@ -1,0 +1,31 @@
+<template>
+    <lightning-card title="Constructor calling">
+        <div class="slds-var-m-around_large">
+            <template if:true={isChildVisible}>
+                <lightning-button 
+           variant="brand"
+           label="child hide"
+           title="child hide"
+           onclick={changeHandler} 
+           class="slds-var-m-around_xx-large" ></lightning-button>
+
+            </template>
+            <template if:false={isChildVisible}>
+                <lightning-button 
+           variant="brand"
+           label="child show"
+           title="child show"
+           onclick={changeHandler} 
+           class="slds-var-m-around_xx-large" ></lightning-button>
+
+            </template>
+
+           
+           
+           <template if:true={isChildVisible}>
+            <c-constructor-child></c-constructor-child>
+           </template>
+            
+        </div>
+    </lightning-card>
+</template>

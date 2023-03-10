@@ -1,0 +1,19 @@
+<aura:component>
+    <!-- This method tag is ued for calling any other cmp -->
+    <aura:method name="show" action="{!c.showMessage}" access="PUBLIC" >
+    <aura:attribute name="message" type="String" default="" />
+    </aura:method>
+
+    <!-- Three methods we used to call from the parent -->
+    <aura:method name="error" action="{!c.showError}" access="PUBLIC" >
+    <aura:attribute name="message" type="String" />
+    </aura:method>
+
+    <aura:method name="remove" action="{!c.removeMessage}" access="PUBLIC" />
+    
+    <!-- This is id used to get the message -->
+    <div aura:id="messages"/>
+        
+    
+
+</aura:component>

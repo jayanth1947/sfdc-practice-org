@@ -1,0 +1,20 @@
+<aura:component controller="auraAccountController" implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId"
+access="global">
+    <!-- System Events -->
+
+    <aura:attribute name="accList" type="List" />
+    <aura:attribute name="recordId" type="String" />
+    <h2>System Event and Browser Event</h2>
+    <aura:handler name="init" value="{!this}" action="{!c.myAction}" />
+    <lightning:select aura:id="select1" name="select1" label="select an Account" onchange="{!c.handleChange}">
+        <option value="Null">None</option>
+        <aura:iteration items="{!v.accList}" var="acc">
+            <!-- Here name is displayed on the Screen -->
+            <option value="{!acc.Id}">{!acc.Name}</option>
+        </aura:iteration>
+        
+    </lightning:select>
+    <!-- <lightning:button variant="brand" label="Get Id" onclick="{!c.handleClick}"/> -->
+
+    Record Id:{!v.recordId}
+</aura:component>

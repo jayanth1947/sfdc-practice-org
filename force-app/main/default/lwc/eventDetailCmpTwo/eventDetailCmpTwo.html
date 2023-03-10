@@ -1,0 +1,182 @@
+<template>
+    <!-- Link to eventListTwo cmp -->
+    <div class="slds-var-p-around_large">
+        <lightning-spinner alternative-text="Loading" size="small" if:true={isSpinner}></lightning-spinner>
+
+        <template if:true={__eventDetails}>
+        <!-- Event Title -->
+        <h1 class="main">Event Details</h1>
+        <div class=" eventTitle slds-var-p-around_large">
+            <p>{__eventDetails.Name__c}</p> 
+
+            <!-- Used for formattinf the date and time -->
+            <p><lightning-formatted-date-time 
+                value={__eventDetails.Start_DateTime__c} 
+                year="numeric" 
+                month="numeric" 
+                day="numeric" 
+                hour="2-digit"
+                minute="2-digit" 
+                time-zone="IST"
+                time-zone-name="short">
+            </lightning-formatted-date-time></p> 
+        </div>
+
+        <!-- Event RSVP 
+        <div class="rsvp slds-var-p-around_large">
+            <lightning-layout multiple-rows>
+                <lightning-layout-item size="12" padding="around-small" small-device-size="12" medium-device-size="6" large-device-size="4" >
+                   <p class="message">
+                    The event is Accepting RSVP and the last Date to RSVP is
+                   </p>
+                </lightning-layout-item>
+                <lightning-layout-item size="12" padding="around-small" small-device-size="12" medium-device-size="6" large-device-size="4">
+                    <p><lightning-formatted-date-time class="rsvp-date"
+                        value={__eventDetails.Start_DateTime__c} 
+                        year="numeric" 
+                        month="numeric" 
+                        day="numeric" 
+                        hour="2-digit"
+                        minute="2-digit" 
+                        time-zone="IST"
+                        time-zone-name="short"></lightning-formatted-date-time></p>
+                </lightning-layout-item>
+                <lightning-layout-item size="12" padding="around-small" small-device-size="12" medium-device-size="6" large-device-size="4">
+                    <template if:true={__showRsvpButon}>
+                        <lightning-button class="rsvp-button" variant="brand" label="RSVP Now" title="RSVPNow" onclick={handleRSVP}></lightning-button>
+                    </template>
+                    <template if:false={__showRsvpButon}>
+                        <lightning-button class="rsvp-button" variant="brand" label="Login to RSVP" title="Login" onclick={handleLoginRedirect}></lightning-button>
+                    </template>
+                    
+                </lightning-layout-item>
+            </lightning-layout>
+        </div>
+    -->
+
+        <!-- Event Details -->
+        <div class=" eventDetail slds-var-p-around_large">
+            <lightning-formatted-rich-text
+                value={__eventDetails.Event_Detail__c}
+            ></lightning-formatted-rich-text>
+        </div>
+        
+
+        <!-- Event Location -->
+        <h1 class="main">Location</h1>
+        <div class=" location-container slds-var-p-around_large">
+
+            <template if:false={__eventDetails.Location__c}>
+                <p>This is a virtual Event</p>
+            </template>
+
+            <template if:true={__eventDetails.Location__c}>
+                <lightning-layout multiple-rows>
+                    <lightning-layout-item size="12" padding="around-small" small-device-size="12" medium-device-size="6" large-device-size="4" >
+                        <lightning-formatted-address
+                            street={__eventDetails.Location__r.Street__c}
+                            city={__eventDetails.Location__r.City__c}
+                            country={__eventDetails.Location__r.Country__c} 
+                            postal-code={__eventDetails.Location__r.Postal_Code__c}
+                        ></lightning-formatted-address>
+                    </lightning-layout-item>
+                    <lightning-layout-item size="12" padding="around-small" small-device-size="12" medium-device-size="6" large-device-size="4">
+
+                        <!-- This will show the map inside the component -->
+                        <lightning-map class="location-map"
+                            map-markers={__mapMarkers}
+                            zoom-level="15"
+                            markers-title="Event Location">
+                        </lightning-map>
+                    </lightning-layout-item>
+                </lightning-layout>
+            </template>
+        </div>
+
+
+        <!-- Event Speakers -->
+        <h1 class="main">Speakers</h1>
+        <div class=" eventSpeaker slds-var-p-around_large">
+            <lightning-layout multiple-rows>
+                <template if:true={__speakers} for:each={__speakers} for:item="speaker" for:index="index">
+                <lightning-layout-item key={speaker.Id} size="12" padding="around-small" small-device-size="12" medium-device-size="6" large-device-size="4" >
+                    
+                    <p>
+                        <img class="titlePhoto" src="https://png.pngtree.com/png-clipart/20210129/ourmid/pngtree-default-male-avatar-png-image_2811083.jpg" 
+                        alt="Speaker Image">
+                    </p>
+                    <p class="speaker-name">
+                        { speaker.Speaker__r.Name}
+                    </p>
+        
+                    <p class="speaker-company">
+                        { speaker.Speaker__r.Company__c}
+                    </p>
+                    <p class="speaker-about">
+                        <lightning-formatted-rich-text
+                        value={speaker.Speaker__r.About_Me__c}
+                    ></lightning-formatted-rich-text>
+                    </p>  
+                </lightning-layout-item>
+            </template>
+            </lightning-layout>
+        </div>
+
+
+        <!-- Event Organizer -->
+        <h1 class="main">Event Organizer</h1>
+        <div class=" eventOrganizer slds-var-p-around_large">
+
+            <p>
+                <img class="titlePhoto" src="https://png.pngtree.com/png-clipart/20210129/ourmid/pngtree-default-male-avatar-png-image_2811083.jpg" 
+                alt="Speaker Image">
+            </p>
+            <p>
+                { __eventDetails.Event_Organizer__r.Name}
+            </p>
+
+            <p>
+                { __eventDetails.Event_Organizer__r.Company__c}
+            </p>
+            <p>
+                { __eventDetails.Event_Organizer__r.About_Speaker__c}
+            </p>
+        </div>
+
+
+        <!-- Contact Us Model -->
+
+        <div class="custom-modal" if:true={__showContactModal}>
+            <section role="dialog" class="slds-modal slds-fade-in-open">
+                <div class="slds-modal__container">
+                    <header class="slds-modal__header">
+                       
+                        <h2 class="slds-text-heading_medium slds-hyphenate">Contact Us</h2>
+                    </header>
+                    <div class="slds-modal__content slds-p-around_medium">
+                        <c-contact-us-component
+                        organizer-email={__eventDetails.Event_Organizer__r.Email__c}
+                        event-id={__eventDetails.Id}
+                        organizer-owner={__eventDetails.Event_Organizer__r.OwnerId}
+                        onsuccess={handleContactusSucess}
+                        oncancel={handleContactusCancel}
+                        ></c-contact-us-component>
+                    </div> 
+                </div>
+            </section>
+            <div class="slds-backdrop slds-backdrop_open"></div>
+        </div>
+
+
+
+        <!-- Contact Us -->
+        <div class="contactUs slds-var-p-around_small">
+            <lightning-button variant="brand" icon-name="standard:email" label="Contact Us"
+             title="Contact Us" onclick={handleContactus}></lightning-button>
+        </div>
+
+    </template>
+    </div>
+</template>
+
+

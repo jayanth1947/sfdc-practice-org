@@ -1,0 +1,62 @@
+/* Style the lightning card */
+.slds-card {
+    background-color: #f2f2f2;
+    border: none;
+    box-shadow: none;
+    border-radius: 5px;
+    padding: 10px;
+  }
+  
+  /* Style the card title */
+  .slds-card__header-title {
+    color: #0070d2;
+    font-size: 24px;
+  }
+  
+  /* Style the card icon */
+  .slds-card__header-icon {
+    color: #0070d2;
+  }
+  
+  /* Style the container div */
+  .slds-p-around_large {
+    margin: 0 auto;
+    max-width: 1200px;
+  }
+  
+  /* Style the image */
+  img {
+    display: block;
+    margin: 0 auto;
+  }
+  
+  /* Style the book title */
+  .slds-text-heading_small {
+    color: #333;
+    font-size: 18px;
+    margin-top: 10px;
+    margin-bottom: 5px;
+  }
+  
+  /* Style the published date and rating */
+  strong {
+    font-weight: bold;
+  }
+  
+  /* Style the book container */
+  .slds-box {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin: 10px;
+    padding: 10px;
+    text-align: center;
+    transition: all 0.3s ease;
+  }
+  
+  /* Hover effect on the book container */
+  .slds-box:hover {
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    transform: translateY(-5px);
+  }
+  

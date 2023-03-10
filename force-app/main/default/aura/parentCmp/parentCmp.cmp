@@ -1,0 +1,16 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId"
+access="global">
+    <h1>Calling from Parent to Child</h1>
+
+    <hr/>
+
+    <c:childCmp aura:id="messages"/>
+
+    <ui:button label="Show Confirmation" press="{!c.handleShow}"/>
+    <ui:button label="Show Error" press="{!c.handleError}"/>
+    <ui:button label="Remove Message" press="{!c.handleRemove}"/>
+    
+
+
+
+</aura:component>

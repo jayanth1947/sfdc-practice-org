@@ -1,0 +1,33 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId"
+access="global">
+
+<!-- Here we are declaring the attributes to test the Date and dateValidationError as type
+boolean  -->
+<aura:attribute name="testDate" type="date" />
+<aura:attribute name="dateValidationError" type="Boolean" />
+
+
+
+<div class="wide">
+    <lightning:input class="{v.dateValidationError ? 'slds-has-error' : ''}" 
+    type="date" 
+    label="Enter Date"
+    value="{!v.testDate}" 
+    name="Date" 
+    onchange="{!c.dateUpdate}" />
+
+    <!-- If the dateValidationError is true then the if block
+     will get executed -->
+    <aura:if isTrue="{!v.dateValidationError}">
+       <div class="slds-text-color_error slds-p-left_x-small">
+           Date must be in present or in Future...
+       </div>
+    </aura:if>
+    <br/>  
+
+    <!-- A button is disabled when you select past date. -->
+    <lightning:button  disabled="{!v.dateValidationError}" 
+    variant="Brand"  onclick="{!c.submit}"
+    label="Submit"/>
+</div>
+</aura:component>

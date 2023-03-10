@@ -1,0 +1,14 @@
+/* Add margin and padding to the outer div */
+.footer {
+    margin: 20px;
+    padding: 20px;
+    font-size: 15px;
+    border-radius: 50px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    border: 1px solid #ccc;
+    padding: 10px;
+    background-color: #f7f7f7;
+  
+}
+  
+  

@@ -1,0 +1,94 @@
+ .eventTitle{
+    font-size: large;
+    background: beige;
+    border-radius: 10px;
+    font-family: cursive;
+    text-align: center;
+ }
+
+ .main{
+  font-size: 36px; /* set the font size */
+  font-weight: bold; /* set the font weight */
+  text-align: center; /* set the text alignment */
+  color: #333; /* set the text color */
+  margin-top: 20px; /* set the top margin */
+  margin-bottom: 20px; /* set the bottom margin */
+  text-transform: uppercase; /* set the text to uppercase */
+ }
+
+
+/* .rsvp{
+    background: lavender;
+    font-size: large;
+    border-radius: 10px;
+    margin-top: 20px;
+    font-family: cursive;
+    text-align: center;
+
+ }
+ */
+ .eventDetail{
+    background: rgb(215, 214, 204);
+    font-size: large;
+    border-radius: 10px;
+    margin-top: 20px;
+    font-family: cursive;
+    text-align: center;
+ }
+
+
+ lightning-formatted-address {
+    display: block;
+    background-color: #f5f5f5;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    font-size: 14px;
+    color: #333;
+    line-height: 1.4;
+  }
+  
+  lightning-formatted-address span {
+    display: block;
+  }
+  
+  lightning-formatted-address .address-line-1 {
+    font-weight: bold;
+  }
+  
+  lightning-formatted-address .postal-code {
+    margin-top: 5px;
+  }
+
+
+  .eventOrganizer{
+    text-align: center;
+    background: burlywood;
+    font-size: large;
+    border-radius: 10px;
+    margin-top: 20px;
+    font-family: cursive;
+    text-align: center;
+ }
+  .titlePhoto{
+    width: 150px;
+    height: 150px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    margin: 0 auto;
+    border-radius: 50%;
+  }
+  
+  
+.eventSpeaker{
+  background: rgb(194, 243, 247);
+  font-size: large;
+  border-radius: 10px;
+  margin-top: 20px;
+  font-family: cursive;
+  text-align: center;
+  }
+  
+  
+ 

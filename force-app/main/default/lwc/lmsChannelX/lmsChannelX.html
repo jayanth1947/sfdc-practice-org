@@ -1,0 +1,16 @@
+<template>
+    <div class="slds-m-around_large">
+        <lightning-card  variant="Narrow"  title="LWC to LWC Communication" icon-name="standard:account">
+            <div class="slds-m-around_large">
+                <lightning-button variant="brand" label="Unsubscribe" title="Unsubscribe" onclick={unsubscribeMessage}></lightning-button>
+            </div>
+            
+            <div class="slds-m-around_small">
+                <strong>
+                    Message Recieved:{recievedMessage}
+                </strong>
+            </div>
+        </lightning-card>
+    </div>
+    
+</template>

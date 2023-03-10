@@ -1,0 +1,11 @@
+.THIS.board{
+    background: white;
+    position: relative;
+}
+/* Why space,because the span tag is not child
+of aura it is the child of div tag */
+.THIS .win-word{ 
+
+    text-transform: uppercase;
+    font-weight: bold;
+}

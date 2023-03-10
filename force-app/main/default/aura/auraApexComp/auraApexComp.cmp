@@ -1,0 +1,20 @@
+<!-- If we need to connect aura and apex class
+we define in the controller and its className 
+and we can call the methods inside it -->
+
+<aura:component controller="auraAccountController" implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId"
+access="global">
+
+    <aura:attribute name="accList" type="List" />
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+    <lightning:card  title="Aura Enabled Component">
+        <!-- Select will display as the list -->
+    <lightning:select name="select1" label=" Select Account" required="false" onchange="{!c.optionalHandler}">
+        <option value="Null">None</option>
+        <aura:iteration items="{!v.accList}" var="acList">
+            <option value="{acList.Id}">{!acList.Name}</option>
+        </aura:iteration>
+    </lightning:select>
+</lightning:card>
+
+</aura:component>

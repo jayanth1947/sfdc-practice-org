@@ -1,0 +1,22 @@
+<template>
+    <lightning-card title="Render Method">
+        <div class="slds-var-m-around_medium">
+            <h2 class="slds-text-heading_medium slds-m-around_medium">Choose the ways to Access</h2>
+            <form action="submit">
+                <lightning-input type="email" label="email Address"></lightning-input>
+                <lightning-input type="password" label="Password"></lightning-input>
+            </form>
+            <lightning-button title="back"
+            variant="destructive"
+            label="back"
+            class="slds-m-left_x-small"
+            onclick={handleClick}></lightning-button>
+
+            <lightning-button title="SignUp"
+            variant="success"
+            label="SignUp"
+            class="slds-m-left_x-small"
+            onclick={successHandler}></lightning-button>
+        </div>
+        </lightning-card>
+</template>

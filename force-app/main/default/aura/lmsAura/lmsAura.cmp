@@ -1,0 +1,47 @@
+<aura:component implements="flexipage:availableForAllPageTypes" access="global">
+
+<!-- Here the attributes are declared -->
+<aura:attribute name="messageValue" type="String"/>
+<aura:attribute name="messageRecieved" type="String"/>
+
+<!-- Here the lightning message channel has been implemented -->
+<!-- The type attribute specifies the type of message channel that is being defined. 
+     In this case, the channel type is set to SampleMessageChannel__c.
+    - The aura:id attribute assigns an identifier to the message channel component,
+     which can be used to reference the component in the component's controller or helper methods.
+     - The onMessage attribute specifies the name of the controller method to be called when a message 
+     is received on this channel. In this case, the handleMessage method is specified.
+     - The scope attribute specifies the scope of the message channel. The value of APPLICATION 
+     indicates that the message channel is available to all components within the same Salesforce application. -->
+<lightning:messageChannel
+    type="SampleMessageChannel__c"
+    aura:id="SampleMessageChannel"
+    onMessage="{!c.handleMessage}"
+    scope="APPLICATION"/>
+
+    
+<!-- Lightning card -->
+    <lightning:card title="LMS Aura Component">
+        <div class="slds-p-around_medium">
+            <label>Enter publish message</label>
+            <input type="text"
+            id="messageInput"
+            name="messageInput"
+            class="slds-input"
+            value="{!v.messageValue}"
+            onkeyup="{!c.inputHandler}"/>
+        </div>
+
+        <!-- This button is used for publishing the message -->
+        <div class="slds-p-around_medium">
+            <lightning:button onclick="{!c.publishMessage}">Publish</lightning:button>
+        </div>
+
+        <!-- This will display the message on the screen -->
+        <div class="slds-p-around_medium">
+            <h1><strong>Message Recieved</strong></h1>
+            <lightning:formattedText value="{!v.messageRecieved}"/>
+        </div>
+
+    </lightning:card>
+</aura:component>	

@@ -1,0 +1,21 @@
+/* This is apply color for the whole div element */
+.THIS {
+    background-color: lightgreen;
+}
+
+
+/* This represents the it is in div class  */
+.THIS.div{
+    background-color: lightpink;
+    font-size: large;
+}
+
+/* This will apply colors according to the class names that are given for child tags
+   but not in the parent tags */
+.THIS .h1{
+    background-color: lightskyblue;
+
+}
+.THIS .h2{
+    background-color: lightyellow;
+}

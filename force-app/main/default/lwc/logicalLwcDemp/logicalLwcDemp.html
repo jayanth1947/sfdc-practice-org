@@ -1,0 +1,30 @@
+<template>
+    <lightning-card title="logical" icon-name="custom:custom2">
+    <lightning-layout vertical-align="center">
+        <lightning-layout-item>
+            {Name}
+        </lightning-layout-item>
+        <br/>
+        <template if:true={message}> <!--In this any value is there,it will be displayed on the screen.-->
+            <lightning-layout-item padding="around-small">
+                {message}
+            </lightning-layout-item>
+        </template>
+            <lightning-layout-item>
+                <template for:each={contacts} for:item="contact" for:index="index">
+                    <p key={contact.Id}>{index}</p>
+
+                     {contact.Id} 
+                     
+                     {contact.Name}
+                    
+                </template>
+            </lightning-layout-item>
+    <lightning-layout>
+            <template if:true={records}>
+                I have values
+            </template>
+        </lightning-layout>
+    </lightning-layout>
+</lightning-card>
+</template>

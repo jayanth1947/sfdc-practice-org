@@ -1,0 +1,15 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId"
+access="global">
+
+<!-- This ui tag will let u type inside the text box -->
+Enter a number <ui:inputText aura:id="inputCmp"/>
+
+<br/>
+
+<lightning:button variant="base" label="Submit" title="Submit" onclick="{!c.doAction}"/>
+
+<br/>
+
+
+
+</aura:component>

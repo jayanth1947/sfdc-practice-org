@@ -1,0 +1,18 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId"
+access="global">
+    <!-- The variables that we will intialize for count and the message  -->
+    <aura:attribute name="msgNotifier" type="String"/>
+    <aura:attribute name="eventCount" type="Integer" default="0"/>
+
+    <!-- Event handler to handle the event -->
+    <aura:handler name="cmpEvent" event="c:auraEvent" action="{!c.handlecmpEvent}" />
+
+    <h1>Component Event Handler</h1>
+
+    <p>{!v.msgNotifier}</p>
+    <p>{!v.label}</p>
+    <P>{!v.eventCount}</P>
+
+    <!-- Child Cmp -->
+    <c:auraEventChild/>
+</aura:component>

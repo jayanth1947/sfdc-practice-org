@@ -1,0 +1,13 @@
+<aura:component>
+    <aura:attribute name="messageNotifier" type="String" />
+
+    <aura:handler event="c:applicationEvent" action="{!c.eventHandler}" />
+
+    <lightning:card class="slds-p-around_small" title=" Application Event Controller">
+           
+        <p>
+            Value: {!v.messageNotifier}
+        </p>
+    </lightning:card>
+   
+</aura:component>

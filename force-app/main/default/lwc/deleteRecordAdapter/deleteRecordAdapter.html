@@ -1,0 +1,11 @@
+<template>
+    <lightning-card  variant="Narrow"  title="Delete Adapter" icon-name="standard:account">
+        <div class="slds-m-around_medium">
+            <form >
+                <lightning-input type="text" variant="standard" name="RecordId" label="Record Id" class="slds-m-bottom_small" onchange={changeHandler}></lightning-input>
+
+                <lightning-button variant="brand" label="Delete Record" title="Delete" onclick={deleteHandler}></lightning-button>
+            </form>
+        </div>
+    </lightning-card>
+</template>

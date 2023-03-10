@@ -1,0 +1,16 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId"
+access="global">
+<aura:attribute name="games" type="String[]" default="['cricket','Tennis','Foot Ball']" />
+    <lightning:card title="Iteration In Aura">
+
+        <h1 class="slds-p-around_small">List of Games</h1>
+    
+        <aura:iteration items="{!v.games}" var="game">
+            <ul class="slds-p-around_small">
+                <li>{!game}</li>
+            </ul>
+        </aura:iteration>
+    </lightning:card>
+    
+
+</aura:component>

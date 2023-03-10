@@ -1,0 +1,51 @@
+<aura:component
+    implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId"
+    access="global">
+    <!--Here are the options displayes in combobox-->
+    
+    <aura:attribute name="modes" type="List" default="[
+    {'label': 'Easy', value:'easy'},
+    {'label': 'Meduim', value:'medium'},
+    {'label': 'Hard', value:'hard'}
+    ]" />
+    <aura:attribute name="selectedGamemode" type="String" />
+<!--Here is the card -->
+<lightning:card title="WordShuffle">
+    <lightning:layout horizontalAlign="center" multipleRows="true">
+            <lightning:layoutItem padding="around-small">
+                <!--Here in the options 'v' is the value and followed by the attribute name-->
+                <lightning:combobox name="progress"
+                variant="label-hidden" 
+                label="Select the game" 
+                value="in progress" 
+                aura:id="Gamemode"
+                options="{!v.modes}"
+                placeholder="Select the type">
+                </lightning:combobox> 
+            </lightning:layoutItem>
+            <lightning:layoutItem padding="around-small">
+                <!--Here is the button-1-->
+                <lightning:button variant="brand" aura:id="startgame" label="Start new game" title="New Game" onclick="{!c.startGame}"></lightning:button>
+            </lightning:layoutItem>
+            <lightning:layoutItem padding="around-small">
+                <!--Here is the button-2
+                    And 'c' represents the controller-->
+                <lightning:button label="Neutral" title="Gamemode" onclick="{!c.shuffle}">
+                </lightning:button>
+            </lightning:layoutItem>
+
+        <aura:if isTrue="{! (v.selectedGamemode !=null)}">
+            <lightning:layoutItem size="12">
+                <c:board mode="{!v.selectedGamemode}"></c:board>
+            </lightning:layoutItem>
+        </aura:if>
+        </lightning:layout>
+    </lightning:card>
+</aura:component>
+
+<!-- Two way data binding : when we change the value in the js file it will be reflected to the ui aslo
+        Bound expression-->
+<!-- <p> selected mode: {!v.selectedGamemode}</p> -->
+<!--unBound expression: when a value can not be changed we use this expression
+        generally used in the loops.-->
+<!-- <p> selected mode: {#v.selectedGamemode}</p> -->

@@ -1,0 +1,12 @@
+<template>
+    <lightning-card title="Permission Check">
+        <div class="slds-var-p-around_medium">
+            <template if:true={visibleDataAvilable}>
+                <p>User Permission set</p>
+            </template>
+            <template if:false={visibleDataAvilable}>
+                <p>User Permission not set</p>
+            </template>
+        </div>
+    </lightning-card>
+</template>

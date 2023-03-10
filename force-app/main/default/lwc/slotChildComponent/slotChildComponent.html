@@ -1,0 +1,9 @@
+<template>
+        <div> what is your name?</div>
+        <div><slot name="first"></slot></div>
+        <div>what is your Qualification?</div>
+        <div><slot name="second"></slot></div>
+        <footer class="slds-card__footer slds-hide">
+            <slot name="footer" onslotchange={handleFooterChange}></slot>
+        </footer>
+</template>

@@ -1,0 +1,7 @@
+div{
+    
+    /* This will apply the blue color */
+    color: var(--lwc-brandAccessible); 
+    /* This will apply the background color inside the component */
+    background: var(--lwc-colorBackgroundInputDisabled);
+}

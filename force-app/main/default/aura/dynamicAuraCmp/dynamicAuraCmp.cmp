@@ -1,0 +1,18 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId"
+access="global">
+
+    <aura:attribute name="message" type="String" />
+
+    <aura:handler name="init" value="{!this}" action="{!c.myAction}" />
+
+    <p>Dynamic Button Created</p>
+    <br/> <hr/>
+
+    {!v.body} <!-- This is the default expression in aura component
+              whatever assigned in the body it will be rendered-->
+
+    <br/><hr/>
+
+    Message is {!v.message}
+
+</aura:component>

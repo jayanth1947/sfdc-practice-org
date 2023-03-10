@@ -1,0 +1,18 @@
+<aura:component>
+    <!-- If you to send a message from one component 
+     to other component we use Application Event
+     If you want to send a message from child to 
+     parent we will use component event -->
+    <aura:registerEvent name="appEvent" type="c:applicationEvent"/>
+
+    <lightning:card class="slds-p-around_medium" title="Application Event" >
+        <h1>
+            Application Event
+        </h1>
+
+        <br/>
+        <ui:button label="Fire a application Event" press="{!c.fireEvent}"/>
+    
+    </lightning:card>
+    
+</aura:component>

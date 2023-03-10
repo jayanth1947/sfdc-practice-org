@@ -1,0 +1,45 @@
+<template>
+    <lightning-card title="For each loop">
+        <div class="slds-p-around_medium lgc-bg">
+            <template for:each={carsList} for:item="car"> 
+                <ul key={car} class="slds-has-dividers_around-space">
+                    <li class="slds-item">{car}</li>
+                  </ul>
+            </template>
+        </div>
+    </lightning-card>
+
+    <lightning-card title="For each loop using object in a array">
+        <div class="slds-p-around_medium lgc-bg">
+            <template for:each={employeeDetails} for:item="emp"> 
+                <ul key={emp.id} class="slds-has-dividers_around-space">
+                    <li class="slds-item">{emp.name} {emp.company}</li>
+                  </ul>
+            </template>
+        </div>
+    </lightning-card>
+
+    <lightning-card title="Iterator loop">
+        <div class="slds-p-around_medium lgc-bg">
+            <template iterator:employee={employeeDetails}> 
+                <ul key={employee.value.id} class="slds-has-dividers_around-space">
+                    <template if:true={employee.first}>
+                        <div class="slds-p-around_medium lgc-bg">
+                            <strong>The list of employees and their companies</strong> 
+                        </div>
+                    </template>
+                    <li class="slds-item">
+                        <strong>{employee.value.name}</strong>
+                        <br>
+                        {employee.value.comapany}
+                    </li>
+                    <template if:true={employee.last}>
+                        <div class="slds-p-around_medium lgc-bg">
+                           <strong>More details need to add!!</strong> 
+                        </div>
+                    </template>
+                  </ul>
+            </template>
+        </div>
+    </lightning-card>
+</template>

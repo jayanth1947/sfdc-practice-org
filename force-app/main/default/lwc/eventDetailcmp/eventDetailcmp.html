@@ -1,0 +1,83 @@
+<template>
+    <lightning-card  title="Event Details" icon-name="standard:event">
+        <div class="slds-m-around_small">
+
+            <!-- This tabset attribute wii give you a tab like view -->
+
+            <lightning-tabset variant="scoped" active-tab-value="event">
+
+                <!-- This is for Event Details -->
+
+                <lightning-tab label="Event Details" value="Event detail">
+                    <lightning-record-form
+                    record-id={recordId}
+                    mode="readonly"
+                    layout-type="Full"
+                    columns="2"
+                    object-api-name="Event__c" >
+                    </lightning-record-form>
+                </lightning-tab>
+
+                    <!-- This will display the Speakers Detail -->
+
+                <lightning-tab label="Event Speaker" value="speaker" onactive={handleSpeakerActive}>
+
+                        <!-- Create a new for Speaker -->
+                        <div class="slds-clearfix">
+                        <lightning-button variant="brand" label="New Speaker" title="New Speaker" class="slds-float_right" onclick={createSpeaker}></lightning-button>
+                    </div>
+                    <!-- If there is one speaker display the table -->
+                    <template if:true={speakerList}>
+                        <template  for:each={speakerList} for:item="speaker">
+                            <c-speaker-tilecmp speaker={speaker} key={speaker.Id}></c-speaker-tilecmp>
+                        </template>
+                    </template>
+
+                    <!-- If there are no speakers displat the below message -->
+                    <template if:false={errors}>
+                        <template if:false={speakerList}>
+                            There is no data that is linked to the Speaker
+                        </template>
+                    </template>
+                </lightning-tab> 
+
+                <!-- This will display the location Details -->
+
+                <lightning-tab label="Event Location" value="location" onactive={handleLocation}>
+                    <template if:true={eventRec}>
+                        <p>Event Location</p>
+                        <lightning-formatted-address title="Event Locaton"
+                         street={eventRec.Location__r.Street__c}
+                        city={eventRec.Location__r.City__c}
+                        province={eventRec.Location__r.State__c}
+                        country={eventRec.Location__r.Country__c}
+                        postal-code={eventRec.Location__r.Postal_Code__c}
+                        ></lightning-formatted-address>
+                    </template>
+                </lightning-tab>
+
+
+
+                <!-- This will display the Event Attendees  -->
+
+                <lightning-tab label="Event Attendees" value="attendee"
+                onactive={handleEventAttendee} >
+            
+                    <!-- Create a button for new Attendee -->
+                    <div class="slds-clearfix">
+                    <lightning-button variant="brand" label="New Attendee" title="New Attendee"  class="slds-float_right" onclick={createAttendees}></lightning-button>
+                </div>
+      
+                <lightning-datatable
+                  key-field="id"
+                  data={attendeesList}
+                  show-row-number-column
+                  hide-checkbox-column
+                  columns={columnAttendee} >
+                </lightning-datatable>
+              </lightning-tab>
+
+            </lightning-tabset>
+            </div>
+    </lightning-card>    
+</template>

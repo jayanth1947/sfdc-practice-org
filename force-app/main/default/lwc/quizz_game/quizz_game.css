@@ -1,0 +1,78 @@
+
+ 
+/* Styling for the quiz title */
+.slds-card__header {
+    background-color: #f2f2f2;
+    font-weight: bold;
+    font-size: 24px;
+    padding: 10px 20px;
+}
+
+/* Styling for the quiz questions */
+.slds-m-around_medium {
+    background-color: #fff;
+    border: 1px solid #d9d9d9;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    margin-bottom: 20px;
+    padding: 20px;
+}
+
+/* Styling for the question text */
+.slds-m-around_medium strong {
+    font-size: 18px;
+    margin-bottom: 10px;
+    display: block;
+}  
+
+/* Styling for the answer options */
+.slds-col {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.slds-col input[type="radio"] {
+    margin-right: 10px;
+    appearance: none;
+    -webkit-appearance: none;
+    border: 2px solid #d9d9d9;
+    border-radius: 50%;
+    width: 18px;
+    height: 18px;
+}
+
+.slds-col input[type="radio"]:checked:before {
+    content: '';
+    display: block;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #0070d2;
+    margin: 3px;
+}
+
+.slds-col label {
+    font-size: 16px;
+}
+
+/* Styling for the buttons */
+.slds-p-around_medium {
+    margin-right: 10px;
+}
+
+/* Styling for the results message */
+.slds-m-top_medium {
+    font-size: 18px;
+    margin-top: 20px;
+}
+
+/* Styling for when the quiz is scored */
+.isscoredFull {
+    background-color: #fff;
+    border: 1px solid #d9d9d9;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    margin-top: 20px;
+    padding: 20px;
+}

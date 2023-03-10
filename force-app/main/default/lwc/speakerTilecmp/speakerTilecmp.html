@@ -1,0 +1,36 @@
+<template>
+
+    <!-- We are adding layout to this cmp -->
+    <lightning-layout vertical-align="center">
+        <lightning-layout-item>
+
+            <!-- If the speaker has already updated in the speaker tab the image will be populated -->
+            <template if:true={speaker.Picture__c}>
+                <img src={speaker.Picture__c} width="60px" height="60px" alt="Profile Photo" >
+            </template>
+
+            <!-- If the speaker has not uploaded the image the default image will be populated -->
+            <template if:false={speaker.Picture__c}>           
+                <img src="https://png.pngtree.com/png-clipart/20210129/ourmid/pngtree-default-male-avatar-png-image_2811083.jpg"
+                  width="60px" height="60px" alt="Profile Pic">
+            </template>
+
+        </lightning-layout-item>
+
+        <lightning-layout-item class="slds-p-around_small">
+            <!-- Here the speaker Name will be populated -->
+            <p>{speaker.Name}</p>
+            <p>
+                <!-- Here the speaker Email will be populated -->
+                <lightning-formatted-email value={speaker.Email}>
+                </lightning-formatted-email>
+            </p>
+            <p>
+                <!-- Here the speaker Detail will be populated -->
+                <lightning-formatted-rich-text value={speaker.About_Me__c}>    
+                </lightning-formatted-rich-text>
+            </p>
+        </lightning-layout-item>
+        
+    </lightning-layout>    
+</template>

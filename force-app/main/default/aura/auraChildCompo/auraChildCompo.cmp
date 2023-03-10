@@ -1,0 +1,13 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId"
+access="global">
+
+<aura:attribute name="child" type="String"/>
+
+<aura:handler name="init" value="{!this}" action="{!c.myAction}" />
+
+<lightning:card  title="Child Component">
+        
+        <strong class="slds-m-around_medium">{!v.child}</strong>
+    </lightning:card>
+
+</aura:component>

@@ -1,0 +1,14 @@
+<aura:component>
+    <!-- If a child component has an Aura.Action attribute,
+         a parent component can pass in an action handler when 
+         it instantiates the child component in its markup -->
+    <aura:attribute name="parentAction" type="Aura.Action" />
+    <aura:attribute name="valueForParent" type="String" 
+                    default="Child Value for parent" />
+
+    <p>
+        Child Component
+    </p>
+
+    <ui:button label="Click me" press="{!v.parentAction}"/>
+</aura:component>

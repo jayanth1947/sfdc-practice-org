@@ -1,0 +1,24 @@
+<template>
+    <lightning-card  variant="Narrow"  title="Create Record" icon-name="standard:account">
+
+        <div class="slds-p-around_medium">
+            <form class="createForm">
+                <lightning-input type="text" variant="standard" name="FirstName" label="First Name" 
+                onchange={changeHandler}></lightning-input>
+                <lightning-input type="text" variant="standard" name="LastName" label="Lsat Name" 
+                onchange={changeHandler}></lightning-input>
+                <lightning-input type="text" variant="standard" name="Title" label="Title" 
+                onchange={changeHandler}></lightning-input>
+                <lightning-input type="Phone" variant="standard" name="Phone" label="Phone" 
+                onchange={changeHandler}></lightning-input>
+                <lightning-input type="Email" variant="standard" name="Email" label="Email" 
+                onchange={changeHandler}></lightning-input>
+
+                <!-- This is the button for the creating the contact record -->
+                <div class="slds-p-around_small">
+                    <lightning-button variant="brand" label="Crete Contact" title="Contact" onclick={handlebtn}></lightning-button>
+                </div>
+            </form>
+        </div>
+    </lightning-card>
+</template>

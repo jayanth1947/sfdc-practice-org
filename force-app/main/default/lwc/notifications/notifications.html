@@ -1,0 +1,17 @@
+<template>
+    <lightning-card title="Notification">
+        <div class="slds-var-p-around_medium">
+            <lightning-button variant="brand" class="slds-p-around_small"
+            label="success" onclick={toastHandler}></lightning-button>
+            <br>
+            <lightning-button variant="destructive" class="slds-p-around_small"
+            label="Error" onclick={toastHandlerTwo}></lightning-button>
+            <br>
+            <lightning-button variant="brand" class="slds-p-around_small"
+            label="Warning" onclick={toastHandlerThree}></lightning-button>
+            <br>
+            <lightning-button variant="destructive" class="slds-p-around_small"
+            label="Info" onclick={toastHandlerFour}></lightning-button>
+        </div>
+    </lightning-card>    
+</template>

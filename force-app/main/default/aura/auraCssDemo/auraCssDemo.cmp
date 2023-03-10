@@ -1,0 +1,19 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId"
+access="global">
+    <div>
+        Hi there You are in a right place
+    </div>
+
+    <div class="div">
+        I am in a class Div
+    </div>
+
+    <div>
+        <h1 class="h1">
+            I am H1
+        </h1>
+        <h2 class="h2">
+            I am H2
+        </h2>
+    </div>
+</aura:component>

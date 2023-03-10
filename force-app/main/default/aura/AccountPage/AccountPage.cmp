@@ -1,0 +1,15 @@
+<aura:component
+    implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId"
+    access="global">
+    <!--These are the list of variables we can do it in the aura component-->
+    <aura:attribute name="Helloworld" type="String" default="Helloworld"/>
+    <aura:attribute name="number" type="integer" default="210" />
+    <aura:attribute name="boolean" type="boolean" default="true" />
+    <lightning:card footer="Hello world footer" title="HelloWorld">
+
+        <p class="slds-p-horizontal_small" style="color:brown ;">
+           {!v.Helloworld} {!v.boolean}{!v.number}
+        </p>
+        <lightning:button variant="brand" label="Brand" title="Brand action" />
+    </lightning:card>
+</aura:component>
