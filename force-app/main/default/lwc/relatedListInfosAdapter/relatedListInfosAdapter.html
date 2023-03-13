@@ -1,0 +1,17 @@
+<template>
+    <lightning-card  variant="Narrow"  title="Related Lists Info" icon-name="standard:account">
+       
+       <div class="slds-p-around_medium">
+        <h1>
+            Related List On Account Record
+        </h1>
+        <template if:true={relatedData}>
+            <template for:each={relatedData} for:item="data">
+                <p key={data.label}>
+                    {data.label}
+                </p>
+            </template>
+        </template>
+       </div>
+    </lightning-card>
+</template>
