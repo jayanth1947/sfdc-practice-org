@@ -1,0 +1,19 @@
+<template>
+    <lightning-card title="Modal Component Demo">
+        <div class="slds-var-m-around_medium">
+            <lightning-button variant="brand" label="Open" onclick={openHandler}></lightning-button>
+        </div>
+    </lightning-card>
+
+    <template if:true={isOpen}>
+        <c-model onclose={closeHandler}>
+            <h1 slot="title">Model Header</h1>
+            <p>Kalki is Coming</p>
+            <div slot="footer">
+                <button class="slds-button slds-button_neutral" onclick={closeHandler}>Cancel</button>
+                <button class="slds-button slds-button_brand">Save</button>
+            </div>
+        </c-model>
+    </template>
+   
+</template>
