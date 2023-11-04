@@ -1,0 +1,32 @@
+<template>
+
+    <!-- This is the demo for the LWC-If and LWC:else -->
+    <lightning-card title="LWC:If and Else Demo">
+        <div class="slds-var-p-around_medium">
+            <lightning-button label={getLabel} onclick={showTextHandler}></lightning-button>
+            <template lwc:if={showText}>
+                Hello There!!
+            </template>
+            <template lwc:else>
+                Bye Bye!!
+            </template>
+        </div>
+    </lightning-card>
+
+    <!-- This is the demo for the LWC-If and LWC:else ,lwc:elseif -->
+    <lightning-card title="LWC:If and Else Getter Demo">
+        <div class="slds-var-p-around_medium">
+            <lightning-input label="Country Name" value={country} onchange={changeHandler}></lightning-input>
+            <template lwc:if={isCountryIndia}>
+                This is India
+            </template>
+            <template lwc:elseif={isCountryCanada}>
+                This is Canada
+            </template>
+            <template lwc:else>
+                Not a India
+            </template>
+        </div>
+    </lightning-card>
+
+</template>
