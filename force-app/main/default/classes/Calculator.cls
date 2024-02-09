@@ -1,11 +1,7 @@
-public class Calculator {
-    integer n1,n2;
-    public void sum(integer n1,integer n2){
-        System.debug(n1+n2);
-        
-        
-    }
-    public void sum(decimal n1,decimal n2){
-        System.debug(n1+n2);
+public class calculator {
+    public static Integer addnumbers(Integer a,Integer b){
+        Integer res=a+b;
+        System.debug(res);
+        return res;
     }
 }
