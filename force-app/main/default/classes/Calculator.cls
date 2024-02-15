@@ -1,6 +1,33 @@
 public class calculator {
-    public static Integer addnumbers(Integer a,Integer b){
-        Integer res=a+b;
+    public static Decimal addnumbers(Decimal a,Decimal b){
+        if(a==null || b==null){
+            return 0;
+        }
+        Decimal res=a+b;
+        System.debug(res);
+        return res;
+    }
+    public static Decimal subtractnumbers(Decimal a,Decimal b){
+        if(a==null || b==null){
+            return 0;
+        }
+        Decimal res=a-b;
+        System.debug(res);
+        return res;
+    }
+    public static Decimal multiplynumbers(Decimal a,Decimal b){
+        if(a==null || b==null){
+            return 0;
+        }
+        Decimal res=a*b;
+        System.debug(res);
+        return res;
+    }
+    public static Decimal dividenumbers(Decimal a,Decimal b){
+        if(a==null || b==null){
+            return 0;
+        }
+        Decimal res=a/b;
         System.debug(res);
         return res;
     }
