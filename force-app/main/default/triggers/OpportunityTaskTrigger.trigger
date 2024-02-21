@@ -1,6 +1,6 @@
 trigger OpportunityTaskTrigger on Opportunity (after update) {
 
     if(Trigger.isAfter && Trigger.isUpdate){
-     	OpportunityTaskHandler.createTask(Trigger.new);   
+        OpportunityTaskHandler.createTask(Trigger.new);   
     }
 }
