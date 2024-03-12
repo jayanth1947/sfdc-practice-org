@@ -1,0 +1,397 @@
+Javascript - It is a cross platform,Object Orieneted programming lanuage, and used to make
+websites interactive,
+
+- There are more servere side versions of Javascript such as node js which allow you to add more
+functionality to the website
+
+
+Where it is used
+----------------------
+
+- Used in client side programming
+- used in server side programming
+- used in game development
+- used in mobile applications
+
+
+- Most JavaScript programs contain many JavaScript statements.
+
+- The statements are executed, one by one, in the same order as they are written.
+
+- Semicolons separate JavaScript statements.
+
+- Add a semicolon at the end of each executable statement
+
+- JavaScript ignores multiple spaces. You can add white space to your script to make it more readable.
+
+- JavaScript statements can be grouped together in code blocks, inside curly brackets {...}.
+
+- The purpose of code blocks is to define statements to be executed together.
+
+- JavaScript statements often start with a keyword to identify the JavaScript action to be performed.
+
+var - 	Declares a variable
+let -	Declares a block variable
+const -	Declares a block constant
+if -	Marks a block of statements to be executed on a condition
+switch -	Marks a block of statements to be executed in different cases
+for - 	Marks a block of statements to be executed in a loop
+function -	Declares a function
+return -	Exits a function
+
+
+Comments in JavaScript
+
+- JavaScript comments can be used to explain JavaScript code, and to make it more readable.
+
+- JavaScript comments can also be used to prevent execution, when testing alternative code.
+
+- Single line comments start with //.
+
+- Multi-line comments start with /* and end with */.
+
+Variables in Javascript
+------------------------
+
+- These are used to store information to be referenced and manipulates
+
+- These can be number,String,Boolean,Date/time, Object
+
+- In Javascript we will work with three types of Variables,
+1) var
+2) let
+3) const
+
+- JavaScript had Global Scope and Function Scope.
+
+- ES6 introduced the two new JavaScript keywords: let and const.
+
+
+- A variable declared without a value will have the value undefined.
+
+Difference b/w var,let,const
+
+- var declarations are globally scoped or function scoped, where as let and const are block scoped
+
+- var Variables can be updated or re-declared within its scope, let Variables are updated but not re-declared,
+const Variables can neither be updated nor declared
+
+- while var and let can be declared without being intialized, const must be intialized during declaration
+
+
+Datatypes
+==================
+JavaScript has 8 Datatypes
+
+1. String
+2. Number
+3. Bigint
+4. Boolean
+5. Undefined
+6. Null
+7. Symbol
+8. Object
+
+
+- The Object Datatype
+- The object data type can contain:
+
+1. An object
+2. An array
+3. A date
+
+
+- JavaScript has dynamic types. 
+- This means that the same variable can be used to hold different data types:
+
+let x;       // Now x is undefined
+x = 5;       // Now x is a Number
+x = "John";  // Now x is a String
+
+
+JavaScript Objects
+------------------------
+- JavaScript objects are written with curly braces {}.
+
+- Object properties are written as name:value pairs, separated by commas.
+
+Eg: const person = {firstName:"John", lastName:"Doe", age:50, eyeColor:"blue"};
+
+
+The typeof Operator
+----------------------
+- You can use the JavaScript typeof operator to find the type of a JavaScript variable.
+
+- The typeof operator returns the type of a variable or an expression
+
+typeof ""             // Returns "string"
+typeof "John"         // Returns "string"
+typeof "John Doe"     // Returns "string"
+
+
+
+Collections in JavaScript
+===========================================
+
+
+Map - It is Collection of key value pair, just like an object
+- Map allows keys of anytype
+
+Methods and properties in Map
+
+1) new Map() - creates a Map
+
+2) map.set(key,value) - stores the value by key.
+
+3) map.get(key) - returns the value  by the key.
+
+4) map.has(key) - returns true if key exists.
+
+5) map.delete(key) - removes the value by the key.
+
+6) map.clear() - clears the map.
+
+7) map.size() - returns the current element.
+
+8) map.keys() - returns the keys.
+
+9) map.values() - returns the value.
+
+10) map.entries() - returns the entries of key and values.
+
+
+
+
+Set - It is a Collection of values that are unique in a set.
+
+
+Methods are :
+
+1) new Set()
+2) set.add(value)
+3) set.delete(value)
+4) set.has(value)
+5) set.clear()
+6) set.size()
+
+
+
+
+Difference b/w == & ===
+
+== - It only compares the values
+
+=== - It compares both values and its Datatypes.
+
+- Object.is(value,value) => returns true or false, checking both the values and Datatypes
+
+
+String functions in JavaScript
+
+1) length - It tells you the length of the string.
+2) slice(start,end) - It will give you particular of a string.
+3) substring(start,end) - similar to slice, but the second parameter will give how much characters
+- It can not accept negative index
+
+4) substr(start,length) - the second specifies the lenght of the string.
+
+5) replace(original_string,replace_string) - replace with the original string
+
+6) toUpperCase() - converts the string into upperCase
+
+7) toLowerCase() - converts the string into LowerCase
+
+8) str.conCat(first_string,second_string) 
+
+9) trim() - removes the whitespaces at start and end of the string
+
+10) padStart - If we want to include any characters at the front of the string
+
+11) padEnd - If we want to include any characters at the end of the string
+
+12) split - A string can be converted to an array with the split() method:
+
+13) indexOf - find the first occurence of the string at the index value
+lastIndexOf -  find the last occurence of the string at the index value
+startsWith - returns true or false
+endsWith - returns true or false
+
+14) includes - he includes() method returns true if a string contains a specified value. Otherwise it returns false.
+
+15) at() method returns the character at a specified index (position) in a string.
+
+
+Back-Tics Syntax
+--------------------------
+Template Strings use back-ticks (``) rather than the quotes ("") to define a string:
+
+let text = `Hello World!`;
+
+
+
+Interpolation
+-----------------------------
+Template String provide an easy way to interpolate variables and expressions into strings.
+
+The method is called string interpolation.
+
+
+Eg: let firstName = "John";
+    let lastName = "Doe";
+
+    let text = `Welcome ${firstName}, ${lastName}!`;
+
+
+Objects
+-----------------------
+- It is the most complex Datatype in JavaScript.
+- These are containers for the named values called properties and Methods
+
+Eg - obj= {} -> Empty Object
+
+- obj.name="jayanth"
+obj ={"name" : "jayanth"}
+
+- In JavaScript when we try to copy the object it will copy the reference not the object.
+
+- A object can contain values and multiple objects.
+
+- You can access the object properties using Dot and Array notation.
+
+- Array notation is usedful when you have a space in your property name
+
+- fetch all keys by using Object.keys()
+
+- Convert the object to string using JSON.stringfy(object) and String to Object using
+  JSON.parse(String).
+
+
+A) typeof operator - It is used to get the Datatype of its operand
+- It always returns a string of the datatype.
+- The operand can be either a literal or a data structure such as variable or a function or an object.
+
+synatx - typeof(Operand)
+
+typeof(null) -> gives a object.
+
+typeof(typeof 1) -> gives you a string
+
+typeof !!(-1) -> gives you a boolean.
+
+typeof new (Date) ->returns a object, when you see a new keyword and it is a object.
+
+typeof [] -> returns a object.
+
+
+Type Coercion - It is the process of converting from one type to another type.
+--------------
+
+- converting from string to boolean, number to string.
+
+Types of Coercion
+1) Explicit  - Conversion that use in-built function
+2) Implicit  - Conversions that aren't obvious done by the compiler
+
+
+Falsy values in JavaScript
+--------------------------------
+
+- false, 0, Empty String, null, undefined, NaN
+
+
+
+This keyword
+------------------------
+In JavaScript, the this keyword refers to an object.
+
+- Which object depends on how this is being invoked (used or called).
+
+- The this keyword refers to different objects depending on how it is used:
+
+- In an object method, this refers to the object.
+- Alone, this refers to the global object.
+- In a function, this refers to the global object.
+- In a function, in strict mode, this is undefined.
+- In an event, this refers to the element that received the event.
+
+
+Loops in JavaScript
+---------------------------
+
+for  - for(let i=0 ;i<=4;i++){}
+
+for/in  - for(let n in object){}
+
+for/of  - for(variable  of object/arrays/maps)
+
+while   - while(condition) { do condition }
+
+do/while do {  } while(condition)
+
+
+Arrays in JavaScript
+----------------------------------
+
+- It is object that represents the Collection of similar data.
+
+- There are three ways to create a Arrays
+
+1) By array literal
+2) By creating Instance of Array directly.
+3) By using a array constructor.
+
+Array Methods
+------------------
+
+
+ 1) conCat
+
+ 2) entries
+
+ 3) every
+
+ 4) from
+
+ 5) forEach
+
+ 6) includes
+
+ 7) indexOf
+
+ 8) isArraay
+
+ 9) join
+
+ 10) keys
+
+11) pop
+
+12) push
+
+13) shift
+
+14) unshift
+
+15) reverse
+
+16) some
+
+17) slice
+
+18) splice
+
+19) toString
+
+20) values
+
+21) filter
+
+22) find
+
+23) reduce
+
+24) reduceRight
+
+25) sort
+
+
