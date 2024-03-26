@@ -488,3 +488,69 @@ Classes in JavaScript
 
 - class can have multiple constructors, methods.
 
+
+Async Await
+--------------------
+
+
+- There are special syntax to work with promises in a more comfortable way called async/ await.
+
+- It is easy to understand.
+
+- It will return always a promise.
+
+- Always use await inside the async function
+
+
+Promises in JavaScript
+--------------------------------
+
+- The promise object represents the eventual completion or failure of a asyncronous Operation and its resulting value.
+
+- A promise is in the following states.
+1) pending - intial state, neither fullfilled nor rejected.
+
+2) fullfilled - meaning that the operation was successfully completed.
+
+3) rejected - The operation should be failed.
+
+- when the executer finishes the job, it should call one of the Functions
+
+-> resolve(value) - a job is finished.
+-> sets to fullfilled
+-> sets result to value
+-> reject(error) - indicates as the error.
+-> sets state to rejected.
+-> sets result to error.
+
+
+- These are maily used for the asyncronous operations
+
+
+Promises Methods
+-------------------
+
+1) Promise.all -> Wait for all promises to be resolved, or for any to be rejected.
+
+2) Promise.any -> Takes an iterable for promise objects and as soon as one of the promises in the
+   iterable fulfills, returns a single promise that resolves with the value from that promise.
+
+3) Promise.race -> wait until any of the promises is fulfilled or rejected.
+
+4) Promise.reject -> Returns a new Promise object that is rejected
+
+5) Promise.reslove -> Returns a new Promise that is resolved with the given value.
+
+- Chaining also can be done in the promise.
+
+
+
+Events and Event Handlers in JavaScript
+--------------------------------------------
+
+- Events are normally used in the combination with the functions and the function will not be executed
+  before the event occurs.
+
+- Some of the events are click,drag, change,hover etc...
+
+  
