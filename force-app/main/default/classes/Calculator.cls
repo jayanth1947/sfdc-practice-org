@@ -1,11 +1,34 @@
-public class Calculator {
-    integer n1,n2;
-    public void sum(integer n1,integer n2){
-        System.debug(n1+n2);
-        
-        
+public class calculator {
+    public static Decimal addnumbers(Decimal a,Decimal b){
+        if(a==null || b==null){
+            return 0;
+        }
+        Decimal res=a+b;
+        System.debug(res);
+        return res;
     }
-    public void sum(decimal n1,decimal n2){
-        System.debug(n1+n2);
+    public static Decimal subtractnumbers(Decimal a,Decimal b){
+        if(a==null || b==null){
+            return 0;
+        }
+        Decimal res=a-b;
+        System.debug(res);
+        return res;
+    }
+    public static Decimal multiplynumbers(Decimal a,Decimal b){
+        if(a==null || b==null){
+            return 0;
+        }
+        Decimal res=a*b;
+        System.debug(res);
+        return res;
+    }
+    public static Decimal dividenumbers(Decimal a,Decimal b){
+        if(a==null || b==null){
+            return 0;
+        }
+        Decimal res=a/b;
+        System.debug(res);
+        return res;
     }
 }
