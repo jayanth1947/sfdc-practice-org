@@ -1,3 +1,11 @@
+/**
+ * @description       : 
+ * @author            : ChangeMeIn@UserSettingsUnder.SFDoc
+ * @group             : 
+ * @last modified on  : 01-21-2025
+ * @last modified by  : Jayanth Onteru
+**/
+
 //This batch class can have global or public access not a private access
 global class deleteEventBatch implements Database.Batchable<sObject> {
     
