@@ -17,7 +17,7 @@ export default class ContactUsComponent extends LightningElement {
     /*This is a method that is called when any input field in the form changes. 
     It sets the value of the input field to the corresponding field in the __emailMessage object. */
     handleChange(event){
-        const field=event.target.name;
+        const field=event.target.Name;
         const value=event.target.value;
         this.__emailMessage[field]=value;
     }

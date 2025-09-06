@@ -152,6 +152,10 @@ export default class EventDetailCmpTwo extends NavigationMixin(LightningElement)
 
 
 
+
+
+
+
     handleLoginRedirect(){
         let navigationTarget={
             type: 'comm__namedPage',
@@ -163,5 +167,3 @@ export default class EventDetailCmpTwo extends NavigationMixin(LightningElement)
         this[NavigationMixin.Navigate](navigationTarget);
     }
 }
-
-

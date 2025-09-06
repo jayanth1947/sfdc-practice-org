@@ -1,0 +1,19 @@
+<template>
+    <lightning-card  variant="Narrow"  title="Parent to child" icon-name="standard:account">
+        <div class="app slds-p-around_medium">
+            <h2 class="slds-text-heading_medium">Parent to Child communication</h2>
+    
+            <lightning-input
+                label="Message"
+                value={messageToChild}
+                onchange={handleChange}
+            ></lightning-input>
+            <div class="slds-p-around_medium">
+                <c-child-component-one message-from-parent={messageToChild}></c-child-component-one>
+            </div>
+            
+    
+        </div>
+    </lightning-card>
+    
+</template>

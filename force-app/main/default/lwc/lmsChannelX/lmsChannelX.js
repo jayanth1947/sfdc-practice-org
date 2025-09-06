@@ -27,4 +27,3 @@ export default class LmsChannelX extends LightningElement {
     }
     
 }
-    

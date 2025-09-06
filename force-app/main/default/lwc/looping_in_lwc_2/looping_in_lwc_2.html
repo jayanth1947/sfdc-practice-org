@@ -1,7 +1,10 @@
 <template>
+
+    <!-- For Each Loop -->
     <lightning-card title="For each loop">
         <div class="slds-p-around_medium lgc-bg">
             <template for:each={carsList} for:item="car"> 
+                <!-- Key is must in this loop -->
                 <ul key={car} class="slds-has-dividers_around-space">
                     <li class="slds-item">{car}</li>
                   </ul>
@@ -9,6 +12,7 @@
         </div>
     </lightning-card>
 
+    <!-- For Each Loop Using Object -->
     <lightning-card title="For each loop using object in a array">
         <div class="slds-p-around_medium lgc-bg">
             <template for:each={employeeDetails} for:item="emp"> 
@@ -19,6 +23,7 @@
         </div>
     </lightning-card>
 
+    <!-- Iterator Loop -->
     <lightning-card title="Iterator loop">
         <div class="slds-p-around_medium lgc-bg">
             <template iterator:employee={employeeDetails}> 

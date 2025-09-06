@@ -6,8 +6,8 @@ export default class Looping_in_lwc_2 extends LightningElement {
     employeeDetails=[
         {
             id:13358,
-            name:"jayanth",
-            comapany:"cognizant"
+            name:"Jayanth",
+            comapany:"Cognizant"
         },
         {
             id:13345,

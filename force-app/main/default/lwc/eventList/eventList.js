@@ -145,6 +145,3 @@ const columns = [
       }
   
 }
-
-    
-

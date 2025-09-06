@@ -1,10 +1,7 @@
 public with sharing class attendeeEventController {
-
-    // One method is for upcoming events
     @AuraEnabled
     public static List<Event_Attendee__c> upcomingEvents( String eventId){
 
-        // Fetch the data according to the query
         List<Event_Attendee__c> eventAttendeeList=[select Id,Name,
         Event__c,
         Event__r.Location__c,
@@ -20,7 +17,6 @@ public with sharing class attendeeEventController {
         
     }
 
-    // This method is used for pastEvents
     @AuraEnabled
     public static List<Event_Attendee__c> pastEvents( String eventId){
 

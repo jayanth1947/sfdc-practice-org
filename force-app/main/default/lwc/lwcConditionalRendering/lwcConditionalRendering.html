@@ -1,30 +1,36 @@
 <template>
+    <!-- Lightning Card -->
     <lightning-card title="Conditional Rendering">
-    <lightning-button variant="brand" label="Get Data" 
-    title="Condition satisfied" 
-    onclick={handleClick} 
-    class="slds-m-left_x-small">
-</lightning-button>
+            <lightning-button variant="brand" label="Get Data" 
+            title="Condition satisfied" 
+            onclick={handleClick} 
+            class="slds-m-left_x-small">
+        </lightning-button>
+
+    <!-- if:true directive shows the DOM only if the condition/expression is true. -->
     <div class="slds-m-around_medium">
         <template if:true={isInvisible}>
-        Welcome ! Now you are learning LWC
-    </template>
-</div>
-<div class="slds-m-around_medium">
-    <template if:false={isInvisible}>
-        <div>The data is hidden click the button to view thw data</div>
-    </template>
-</div>
+            Welcome ! Now you are learning LWC
+        </template>
+    </div>
+
+    <!-- if:false directive hides the DOM(Document object model)  -->
+    <div class="slds-m-around_medium">
+        <template if:false={isInvisible}>
+            <div>The data is hidden click the button to view the data</div>
+        </template>
+    </div>
 
 <!-- By using getter method -->
 
-<div class="slds-p-around_medium lgc-bg">
-    <lightning-input type="text" 
-    label="Enter some data" 
-    onkeyup={handleInputFocus}></lightning-input>
-    <template if:true={dataShowed}>
-        <div>The data is correct!!😊😊😊</div>
-    </template>
-</div>
+    <div class="slds-p-around_medium lgc-bg">
+        <lightning-input type="text" 
+        label="Enter some data" 
+        onkeyup={handleInputFocus}></lightning-input>
+        <template if:true={dataShowed}>
+            <div>The data is correct!!😊😊😊</div>
+        </template>
+    </div>
+
 </lightning-card>
 </template>

@@ -1,0 +1,10 @@
+<template>
+     <lightning-card title="Parent Component">
+         <div class="slds-p-around_medium">
+             Count of Clicks : {count}
+
+             <!-- Child component -->
+             <c-child-component-two onincreasecount = {handleEventChange}></c-child-component-two>
+         </div>
+     </lightning-card>
+</template>

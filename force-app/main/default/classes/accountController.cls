@@ -7,7 +7,7 @@ public with sharing class accountController {
         return [SELECT ID,NAME,INDUSTRY,TYPE FROM ACCOUNT LIMIT 5];
     }
 
-      
+    // It is used for returning the type of the account
     @AuraEnabled(cacheable=true)
     public static List<Account> getAccountType(String type) {
         return [SELECT ID,NAME,INDUSTRY,TYPE FROM ACCOUNT WHERE TYPE=:type LIMIT 5];
@@ -18,4 +18,11 @@ public with sharing class accountController {
         String key='%'+searchKey+'%';
         return [SELECT ID,NAME,INDUSTRY,TYPE FROM ACCOUNT WHERE NAME LIKE :key LIMIT 5];
     }
+
+    @AuraEnabled
+    public static List<Account> getAccountRecords() {
+        return [SELECT ID,NAME,INDUSTRY,AnnualRevenue FROM ACCOUNT WHERE AnnualRevenue!=null  LIMIT 5];
+    }
+
+
 }

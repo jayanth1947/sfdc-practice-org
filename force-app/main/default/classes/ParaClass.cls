@@ -1,5 +1,6 @@
+//ParaClass.getDay(2);
 public class ParaClass {
-    public String getDay(integer dayNumber){
+    public static String getDay(integer dayNumber){
         String day='';
         switch on dayNumber{
             when 0{

@@ -4,7 +4,7 @@ trigger triggerDemo_2 on Account (before insert) {
     
     //1. Trigger.new
     
-    //List<Account> acc=[select Name,	AnnualRevenue from Account];
+    //List<Account> acc=[select Name,   AnnualRevenue from Account];
     
     //This will update when you will insert a account
     

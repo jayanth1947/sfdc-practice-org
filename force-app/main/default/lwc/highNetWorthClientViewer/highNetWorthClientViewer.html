@@ -1,0 +1,83 @@
+<template>
+    <!-- Card to show on UI -->
+    <lightning-card title="Client Details" icon-name="standard:account">
+        <div class="slds-p-around_medium">
+            <!-- Show Spinner -->
+            <template if:true={isLoading}>
+                <lightning-spinner alternative-text="Loading..." size="medium"></lightning-spinner>
+            </template>
+
+            <template if:false={isLoading}>
+                <template if:true={accountDetails}>
+
+                    <!-- Insufficient Access -->
+                    <template if:true={showInsufficientPrivileges}>
+                        <p>Insufficient privileges to open the page; please contact the administrator.</p>
+                    </template>
+
+                    <!-- Shows the Record Forms -->
+                    <template if:true={showRecordForm}>
+
+                        <!-- If it is High Net Worth -->
+                        <template if:true={accountDetails.isHighNetWorthClient}>
+                            <div class="slds-box slds-box_xx-small slds-theme_shade slds-m-bottom_small">
+                                <lightning-icon icon-name="utility:warning" alternative-text="High Net Worth" title="High Net Worth Client" class="slds-m-right_xx-small"></lightning-icon>
+                                <b>High Net Worth Client</b>
+                            </div>
+
+                            <!-- With Edit Access -->
+                            <template if:true={accountDetails.canEditHighNetWorthClient}>
+
+                                <!-- For Inline edit Mode who has access -->
+                                <lightning-record-form
+                                    record-id={recordId}
+                                    object-api-name="Account"
+                                    layout-type="Full"
+                                    mode="edit"
+                                    columns="2"
+                                    onsubmit={handleSubmit}
+                                    onsuccess={handleSuccess}
+                                    onerror={handleError}>
+                                </lightning-record-form>
+                                <!-- <p class="slds-text-body_small slds-m-top_x-small"><i>Inline edit mode enabled for HNW Client Service Representative.</i></p> -->
+                            </template>
+
+                            <!-- Read access -->
+                            <template if:false={accountDetails.canEditHighNetWorthClient}>
+                                <lightning-record-form
+                                    record-id={recordId}
+                                    object-api-name="Account"
+                                    layout-type="Full"
+                                    mode="readonly"
+                                    columns="2">
+                                </lightning-record-form>
+                                <!-- <p class="slds-text-body_small slds-m-top_x-small"><i>Read-only mode for HNW Client.</i></p> -->
+                            </template>
+
+                        </template>
+
+                        <template if:false={accountDetails.isHighNetWorthClient}>
+                             <div class="slds-box slds-box_xx-small slds-theme_shade slds-m-bottom_small">
+                                <b>Standard Client</b>
+                            </div>
+                            <lightning-record-form
+                                record-id={recordId}
+                                object-api-name="Account"
+                                layout-type="Full"
+                                mode="view"
+                                columns="2"
+                                onsuccess={handleSuccessView}
+                                onerror={handleError}>
+                                </lightning-record-form>
+                             <!-- <p class="slds-text-body_small slds-m-top_x-small"><i>Displaying in view mode. Editability is determined by your standard record access.</i></p> -->
+                        </template>
+                    </template>
+                </template>
+
+                <template if:true={error}>
+                    <p>An error occurred: {errorText}</p>
+                </template>
+            </template>
+        </div>
+    </lightning-card>
+</template>

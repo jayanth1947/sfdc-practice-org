@@ -83,4 +83,3 @@ export default class EventListTwo extends NavigationMixin(LightningElement) {
                 this[NavigationMixin.Navigate](navigationTarget);
             }
     }
-

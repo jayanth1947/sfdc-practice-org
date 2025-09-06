@@ -3,9 +3,14 @@ import { LightningElement } from 'lwc';
 export default class LwcConditionalRendering extends LightningElement {
     isInvisible=false
     data
+
+    //when the user clicks on the button 
     handleClick(){
         this.isInvisible=true
     }
+
+
+    
     // By using getter method
     handleInputFocus(event){
         this.data=event.target.value

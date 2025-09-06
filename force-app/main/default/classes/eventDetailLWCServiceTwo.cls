@@ -38,5 +38,3 @@ public with sharing class eventDetailLWCServiceTwo {
         return speakers;
     }
 }
-
-
